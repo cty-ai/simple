@@ -21,6 +21,6 @@ int main()
     char a[128]="asdfg";
     char *b="123";
     printf("%s",mystrcpy(a,b));
-     printf("%s",mystrcat(a,b));
+    printf("%s",mystrcat(a,b));
     getchar();
 }

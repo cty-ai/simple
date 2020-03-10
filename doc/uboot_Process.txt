@@ -1,0 +1,111 @@
+大致流程：
+上电，直接执行
+BL0BL0(IROM)
+BL0(IROM)：	初始化系列操作
+			加载BL1镜像到SRAM上
+			跳转到BL1的地址上
+BL1(SRAM)
+BL1(SRAM)：	初始化SDRAM(board_init_f)
+			加载BL2镜像到SDRAM上
+			跳转到BL2的地址上
+BL2(SDRAM)
+			初始化部分硬件，包括时钟、内存等等(board_init_r)
+			加载内核到内存上
+			加载文件系统、atags或者dtb到内存上
+			根据操作系统启动要求正确配置好一些硬件
+			启动操作系统
+
+	| 
+	
+jump into OS
+
+=========================================================================================================
+上电，直接执行BL0
+
+BL0(IROM)：	
+		|————>初始化系统时钟、特殊设备的控制器、启动设备、看门狗、堆栈、SRAM等等
+		|
+		|————>	验证BL1镜像
+		|
+		|————>	从存储介质上（比如SD\eMMC\nand flash）或者通过USB加载BL1镜像到对应内部SRAM上
+		|
+		|————>	跳转到BL1的地址上v
+		v
+-----------------------------------------------------------------------------------------
+BL1(SRAM)(spl:Secondary Program Loader)
+	arch级初始化:
+		|_start———–>reset————–>关闭中断,svc模式
+						|
+						|————>cpu_init_cp15———–>关闭MMU,TLB 
+						| 
+						|————>cpu_init_crit————->lowlevel_init————->芯片级、板级的一些初始化操作 
+																	关闭看门狗
+																	IO初始化
+																	时钟,初始化部分时钟（和SDRAM相关）
+																	内存,初始化DDR（外部SDRAM）
+																	选项，串口初始化
+																	选项，nand flash初始化
+																	其他额外的操作
+	board级初始化：
+		_main————–>board_init_f_alloc_reserve —————>堆栈、GD、early malloc空间的分配 
+			| 
+			|————->board_init_f_init_reserve  —————>堆栈、GD、early malloc空间的初始化 
+			| 
+			|————->board_init_f  —————>uboot relocate前的板级初始化以及relocate的区域规划 
+			| 
+			|————->relocate_code、relocate_vectors—————>进行uboot和异常中断向量表的重定向 
+														|
+														|————>从存储介质上（比如SD\eMMC\nand flash）将BL2镜像加载到SDRAM上
+														|
+														|————>验证BL2镜像的合法性
+														|
+														|————>跳转到BL2镜像所在的地址上
+														v
+---------------------------------------------------------------------------------------------
+BL2(SDRAM)
+	(board级初始化：)
+			| 
+			|————>旧堆栈的清空 
+			| 
+			|————>board_init_r ————>uboot relocate后的板级初始化 
+									初始化部分硬件，包括时钟、内存等等
+									加载内核到内存上
+									加载文件系统、atags或者dtb到内存上
+									根据操作系统启动要求正确配置好一些硬件
+			|————>run_main_loop ————>进入命令行状态，等待终端输入命令以及对命令进行处理
+									|
+									|————>启动操作系统
+									v
+jump into OS
+==============================================================================================================================
+当内核映像被加载到 RAM 之后，Bootloader 的控制权被释放。
+内核映像并不是可直接 执行的目标代码，而是一个压缩过的zImage（小内核）或 bzImage（大内核，bzImage 中的“b”是“big”意思）。 
+但是，并非 zImage 和 bzImage 映像中的一切都被压缩了，映像中包含未被压缩的部分，这部分中包含解压缩程序，解压缩程序会解压缩映像中被压缩的部分。
+zImage和 bzImage 都是用 gzip 压缩的，它们不仅是一个压缩文件，而且在这两个文件的开头部分内嵌有 gzip 解压缩代码。
+执行流程如下：
+start()					|/arch/*/boot/head.S
+	|					
+	V
+startup_32()			|/arch/*/boot/head.S设置堆栈，清除BSS
+	|
+	V
+decompress_kernel()		|/arch/*/boot/compress/misc.c解压缩内核
+	|
+	V
+startup_32()			|/arch/*/kernel/head.S
+	|
+	V
+start_kernel()			|/init/main.c
+	|
+	V
+cpu_idle()				|/init/main.c
+
+这些都做完之后，/init/main.c 中的 start_kernel()函数被调用，进入与体系结构无关的Linux 内核部分。
+start_kernel()会调用一系列初始化函数来设置中断，执行进一步的内存配置。
+之后， /arch/i386/kernel/process.c 中 kernel_thread()被调用以启动第一个核心线程，该线程执 行 init() 函数，而原执行序列会调用 cpu_idle()，等待调度。
+作为核心线程的 init()函数完成外设及其驱动程序的加载和初始化，挂接根文件系统。
+init()打开/dev/console 设备，重定向 stdin、stdout 和 stderr 到控制台。
+之后，它搜索文件 系统中的 init 程序（也可以由“init=”命令行参数指定 init 程序），并使用 execve()系统调 用执行 init 程序。
+搜索 init 程序的顺序为/sbin/init、/etc/init、/bin/init 和/bin/sh。
+在嵌入式系统中，多数情况下，可以给内核传入一个简单的 shell 脚本来启动必需的嵌入式应用 程序。
+至此，漫长的 Linux 内核引导和启动过程就结束了，而 init()对应的由 start_kernel()创建的第一个线程也进入用户模式。
