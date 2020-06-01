@@ -1,6 +1,6 @@
 #include <sys/time.h>
 
-float time_use=0;
+long time_use=0;
 struct timeval start;
 struct timeval end;//struct timezone tz; 
 gettimeofday(&start,NULL); //gettimeofday(&start,&tz);
