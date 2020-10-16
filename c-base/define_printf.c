@@ -29,3 +29,10 @@ David 96/10/12 1.0 build this moudle
 #else
 #define	DEBUG(fmt,...)
 #endif
+
+#if 1
+#define DEBUG(format,...) \
+        printf("{%s：%d}"" "format"\n", __func__, __LINE__, ##__VA_ARGS__) //当arg参数为0个，"##"会丢弃前面的逗号
+#else
+#define	DEBUG(fmt,...)
+#endif
