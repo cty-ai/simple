@@ -1,0 +1,7 @@
+{
+    "biz": "/hub/log/upload",
+    "params": {
+        "log": "/var/log/messages",
+        "uploadId": ""
+    }
+}

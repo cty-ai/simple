@@ -1,0 +1,8 @@
+{
+	"biz":"/slot/state/get",
+	"params":{
+		"com":0,
+		"slot":0
+	}
+}
+

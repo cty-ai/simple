@@ -1,0 +1,31 @@
+{
+  "biz": "/ctlboard/config/set",
+  "params": {
+    "comList": [
+      {
+        "com": 1,
+        "usbpath": "1",
+        "ver": "ly-1.0.0",
+        "slots": 32
+      },
+      {
+        "com": 2,
+        "usbpath": "2",
+        "ver": "ly-1.0.0",
+        "slots": 32
+      },
+      {
+        "com": 3,
+        "usbpath": "3",
+        "ver": "ly-1.0.0",
+        "slots": 32
+      },
+      {
+        "com": 4,
+        "usbpath": "4",
+        "ver": "ly-1.0.0",
+        "slots": 32
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "biz": "/slot/info/set",
+  "params": {
+    "slotlist": [
+      {
+        "com": 1,
+        "slot": 1,
+        "devtype": 1,
+        "devid": "499000150961",
+        "taxername":"测试盘1",
+        "taxerid": "110101201701010051",
+        "remark": ""
+      },
+      {
+        "com": 1,
+        "slot": 2,
+        "devtype": 1,
+        "devid": "499000150962",
+        "taxername": "测试盘2",
+        "taxerid": "110101201701010052",
+        "remark": ""
+      },
+      {
+        "com": 1,
+        "slot": 3,
+        "devtype": 1,
+        "devid": "499000150963",
+        "taxername": "测试盘3",
+        "taxerid": "110101201701010053",
+        "remark": ""
+      },
+      {
+        "com": 1,
+        "slot": 4,
+        "devtype": 1,
+        "devid": "499000150964",
+        "taxername": "测试盘4",
+        "taxerid": "110101201701010054",
+        "remark": ""
+      },
+      {
+        "com": 1,
+        "slot": 5,
+        "devtype": 1,
+        "devid": "499000150965",
+        "taxername": "测试盘5",
+        "taxerid": "110101201701010055",
+        "remark": ""
+      }  
+    ]
+  }
+}

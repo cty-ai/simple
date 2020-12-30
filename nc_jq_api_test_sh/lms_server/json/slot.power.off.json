@@ -1,0 +1,7 @@
+{
+	"biz": "/slot/power/off",
+	"params": {
+		"com": 1,
+		"slot": 1
+	}
+}

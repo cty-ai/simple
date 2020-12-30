@@ -1,0 +1,6 @@
+{
+	"biz": "/ctlboard/config/get",
+	"params": {
+		"lms": "A51019390000146"
+	}	
+}

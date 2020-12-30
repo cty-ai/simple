@@ -1,0 +1,12 @@
+ctlboard.config.get.json,50,0,50
+ctlboard.config.set.json,50,0,50
+ctlboard.info.get.json,50,0,50
+ctlboard.state.get.json,50,0,50
+lms.info.json,50,0,50
+pmboard.info.get.json,50,0,50
+slot.scan.json,50,0,50
+slot.info.get.json,50,0,50
+slot.state.get.json,50,0,50
+slot.info.set.json,50,0,50
+slot.state.json,50,0,50
+pmboard.state.get.json,50,0,50

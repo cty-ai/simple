@@ -1,0 +1,9 @@
+{
+    "biz": "/slot/power/reset",
+    "params": {
+        "com": 1,
+        "slot": 1,
+        "delay":500
+    }
+}
+

@@ -1,0 +1,7 @@
+{
+  "biz": "/slot/info/get",
+  "params": {
+    "com": 0,
+    "slot": 0
+  }
+}

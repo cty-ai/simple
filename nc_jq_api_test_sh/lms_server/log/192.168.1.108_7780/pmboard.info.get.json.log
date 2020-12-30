@@ -1,0 +1,3 @@
+FAILED: |PM1001.0|"PM100"
+"1.0"|
+{"code":0,"message":"","result":{"model":"PM100","bdver":"1.0","fwver":"2.0"}}

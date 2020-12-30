@@ -1,0 +1,8 @@
+ota_ver.json#.result.ver#1.5.3
+ota_status.json#.code#0
+mount_usbids_set.json#.code#0
+mount_usbids_get.json#.result.usbIds[0]#null
+net_info.json#.result.nic[0].netmask#255.255.255.0
+sys_info.json#.result.version#1.5.3
+disk_list.json#.result.diskList[0].vid#abcd
+conf_bindlms_reset.json#.code#0

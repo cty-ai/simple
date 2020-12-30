@@ -1,0 +1,12 @@
+#ctlboard.config.get.json#.result.comList[0].com#1
+#ctlboard.config.set.json#.code#0
+ctlboard.info.get.json#.result.comList[0].com,.result.comList[0].model#1MU200
+ctlboard.state.get.json#.result.comList[0].com#1
+#lms.info.json#.result.swVer,.result.hwVer,.result.devType,.result.slots#v1.9.3v1.1128
+#pmboard.info.get.json#.result.model,.result.bdver#PM1001.0
+#slot.scan.json#.code#0
+#slot.info.set.json#.code#0
+#slot.info.get.json#.result.comlist[0].com#1
+#slot.state.get.json#.result.slotlist[0].com#1
+#slot.state.json#.result.com#1
+#pmboard.state.get.json#.result.code#0

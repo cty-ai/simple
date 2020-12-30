@@ -1,0 +1,8 @@
+{
+    "biz": "/slot/devicepath/get",
+    "params": {
+        "lms": "A52019390000046",
+        "com": 0,
+        "slot": 0
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "biz": "/hub/srv/ctrl",
+    "params": {
+        "name": "tcskpctl",
+        "action": "restart"
+    }
+}

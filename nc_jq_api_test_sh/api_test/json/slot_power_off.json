@@ -1,0 +1,8 @@
+{
+  "biz": "/slot/power/off",
+  "params": {
+    "lms": "A51019390000146",
+    "com": 2,
+    "slot": 32
+  }
+}

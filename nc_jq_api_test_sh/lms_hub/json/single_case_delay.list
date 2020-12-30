@@ -1,0 +1,6 @@
+#ota_ver_check.json#.result.action#16#3
+ota_pkg_download.json#.result.action#32#10
+#ota_update.json#.result.action#80#3
+log_upload.json#.code#0#5
+srv_ctrl.json#.code#0#20
+disk_scan.json#.code#0#10

@@ -1,0 +1,8 @@
+ota_ver.json,10,10,0
+ota_status.json,10,0,10
+mount_usbids_set.json,10,10,0
+mount_usbids_get.json,10,10,0
+net_info.json,10,10,0
+sys_info.json,10,10,0
+disk_list.json,10,10,0
+conf_bindlms_reset.json,10,10,0

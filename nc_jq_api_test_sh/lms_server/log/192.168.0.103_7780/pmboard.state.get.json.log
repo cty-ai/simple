@@ -1,0 +1,2 @@
+FAILED: |sensor_ucb|null|
+{"code":0,"message":"","result":{"bdstate":0,"code":0,"temp":"0.00  ","totalcomp":"0.000 "}}

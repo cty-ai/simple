@@ -1,0 +1,7 @@
+{
+    "biz": "/hub/srv/ctrl",
+    "params": {
+    "name": "iperf_service",
+    "action": "start"
+    }
+}

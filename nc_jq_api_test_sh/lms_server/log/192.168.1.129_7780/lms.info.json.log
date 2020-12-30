@@ -1,0 +1,2 @@
+FAILED: |v1.9.3v1.1128|v1.6.61.0256|
+{"code":0,"message":"","result":{"jsbh":"A53020010000294","devType":"","mboard":"u4402","hwVer":"1.0","memTotal":"","relType":"RC","swVer":"v1.6.6","upTime":"2020-04-03 09:16:53","ip":"192.168.199.100","slots":256,"slotsInuse":238,"slotsNormal":238,"slotsException":0}}

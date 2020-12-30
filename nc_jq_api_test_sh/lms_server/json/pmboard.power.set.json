@@ -1,0 +1,7 @@
+{
+  "biz": "/pmboard/power/set",
+  "params": {
+	  "id": 3,
+	  "on": 0
+  }
+}

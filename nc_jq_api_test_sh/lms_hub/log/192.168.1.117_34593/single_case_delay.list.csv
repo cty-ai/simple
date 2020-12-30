@@ -1,0 +1,5 @@
+ota_ver_check.json,1,0,1
+ota_pkg_download.json,1,1,0
+log_upload.json,1,1,0
+srv_ctrl.json,1,1,0
+disk_scan.json,1,1,0

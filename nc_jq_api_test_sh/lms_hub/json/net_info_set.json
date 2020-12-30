@@ -1,0 +1,7 @@
+ {
+    "biz": "/hub/net/info/set",
+    "params": {
+        "name": "eth0",
+        "assign": "dhcp"
+    }
+}

@@ -1,0 +1,2 @@
+FAILED: |v1.8.6v1.1LMS100128|v1.8.6v1.1128|
+{"code":0,"message":"","result":{"jsbh":"A52019390000046","devType":"","mboard":"u4221","hwVer":"v1.1","memTotal":"","relType":"REL","swVer":"v1.8.6","upTime":"2020-03-04 18:33:29","ip":"192.168.1.145","slots":128,"slotsInuse":127,"slotsNormal":127,"slotsException":0}}
