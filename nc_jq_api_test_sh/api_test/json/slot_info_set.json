@@ -1,0 +1,11 @@
+{
+	"biz":"/slot/info/set", 
+	"params":{
+	"slotlist":[
+		{"com": 1, "slot": 1, "devtype":1, "devid": "xx","taxername":"yy", "taxerid":"zz","remark":"xxx"}
+	]
+	}
+}
+
+
+

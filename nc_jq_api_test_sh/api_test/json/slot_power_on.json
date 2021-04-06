@@ -1,8 +1,9 @@
 {
   "biz": "/slot/power/on",
   "params": {
-    "lms": "A51019390000146",
-    "com": 2,
-    "slot": 32
+    "lms": "A51120280000045",
+    "com": 4,
+    "slot": 6,
+    "lowpower": 0
   }
 }
