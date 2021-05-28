@@ -1,0 +1,16 @@
+{
+	"businessCode": "invoiceEntry",
+	"content": {
+		"nsrsbh": "91440300555442072M",
+		"jqbh": "929910876688",
+		"kpzdbs": "929910876688",
+		"fpxl": [{
+			"xh": "1",
+			"fplxdm": "026",
+			"fpdm": "044032000211",
+			"qshm": "60333657",
+			"zzhm": "60333657",
+			"fpfs": "1"
+		}]
+	}
+}

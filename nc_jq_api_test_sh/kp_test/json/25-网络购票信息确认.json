@@ -1,0 +1,16 @@
+{
+	"businessCode": "paperTicketConfirmation",
+	"content": {
+		"nsrsbh": "91440300555442072M",
+		"jqbh": "661602511324",
+		"slxh": "91440300MA5F9J49XQ20210131140324",
+		"fplxdm": "026",
+		"qrxx": [{
+			"xh": "1",
+			"fpdm": "5000153560",
+			"qshm": "26431855",
+			"zzhm": "26432854",
+			"fs": "10"
+		}]
+	}
+}
